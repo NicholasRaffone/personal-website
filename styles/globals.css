@@ -1,0 +1,14 @@
+@import url("https://use.typekit.net/ilf2aaf.css");
+@import url('https://rsms.me/inter/inter.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    html{
+        @apply font-poppins
+    }
+}
+.react-parallax-bgimage{
+    object-fit: cover;
+}

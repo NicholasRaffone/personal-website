@@ -1,0 +1,145 @@
+import React, { ReactNode, useState, useEffect } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import Head from 'next/head'
+import Hamburger from 'hamburger-react'
+import LinkedIn from './icons/LinkedIn';
+import Github from './icons/Github';
+import Spotify from './icons/Spotify';
+import Envelope from './icons/Envelope';
+import IconWrapper from './icons/IconWrapper';
+
+type Props = {
+  children?: ReactNode
+  title?: string
+  containerClasses?: string
+}
+
+const routes = [
+  {
+    href: '/',
+    title: 'HOME'
+  },
+  {
+    href: '/about',
+    title: 'ABOUT'
+  },
+  {
+    href: '/experience',
+    title: 'EXPERIENCE'
+  },
+  {
+    href: '/achievements',
+    title: 'ACHIEVEMENTS'
+  },
+]
+
+const icons = [
+  {
+    icon:LinkedIn,
+    url:'/',
+    title: 'LinkedIn'
+  },
+  {
+    icon:Envelope,
+    url:'/',
+    title: 'Mail'
+  },
+  {
+    icon:Spotify,
+    url:'/',
+    title: 'Spotify'
+  },
+  {
+    icon:Github,
+    url:'/',
+    title: 'Github'
+  },
+]
+
+const Layout = ({ children, title = 'This is the default title', containerClasses }: Props) => {
+  const [open, setOpen] = useState(false);
+  const router = useRouter()
+  useEffect(() => {
+    if(open){
+      document.body.style.overflow = 'hidden';
+    }else{
+      document.body.style.overflow = 'auto';
+    }
+  },[open])
+  return(
+    <div className="">
+      <Head>
+        <title>{title}</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+      </Head>
+      <div className='justify-center w-screen flex py-3 px-5 lg:px-16 fixed justify-end bg-white z-50 h-12 items-end font-inter border-b'>
+        <div className="flex-1">
+          <p className="w-fit mx-auto lg:mx-0 font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500">
+            <Link href="/">
+              Nicholas Raffone
+            </Link>
+          </p>
+        </div>
+        {
+          routes.map(route=>(
+            <Link href={route.href}>
+              <div className='hidden lg:block cursor-pointer relative group mx-5'>
+                <a className={`${router.pathname!==route.href?"opacity-50":'opacity-100'} hover:opacity-100 font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500  duration-300 text-xs`}>{route.title}</a>
+                {
+                  router.pathname===route.href &&
+                  <div className="w-full bg-red-50 absolute flex justify-center">
+                    <div className="h-1 w-1 bg-pink-500 absolute rounded-full"></div>
+                  </div>
+                }
+              </div>
+            </Link>
+          ))
+        }
+        {
+          icons.map(icon=>(
+            <a href={icon.url} target="_blank" rel="noreferrer" className='hidden lg:block cursor-pointer relative group ml-5 self-center w-4 h-4'>
+              {
+                <IconWrapper path={icon.icon.path} viewbox={icon.icon.viewbox} navbar={true}/>
+              }
+            </a>
+          ))
+        }
+      </div>
+      <div className="fixed right-[25px] top-0 z-[100] lg:hidden">
+        <Hamburger toggled={open} toggle={setOpen} color="rgb(80,80,80)"/>
+      </div>
+      <div className={`fixed h-screen w-screen bg-[rgb(255,255,255,0.75)] z-[49] duration-300 ${open?"backdrop-blur-md opacity-100":"backdrop-blur-none pointer-events-none opacity-0"} lg:invisible lg:opacity-0`}>
+        <div className="h-full w-full flex flex-col px-5 pt-14 divide-y divide-gray-500 overflow-y-scroll">
+          {
+            routes.map(route=>(
+              <Link href={route.href} onClick={()=>setOpen(false)}>
+                <div className="flex items-center">
+                  <p className={`duration-0 font-inter text-xl py-4 cursor-pointer tracking-wide font-bold mr-2 ${router.pathname!==route.href?"text-gray-500":'bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500'} hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-blue-500 hover:to-pink-500`}>
+                    {route.title}
+                  </p>
+                  {router.pathname===route.href && <div className="h-1 w-1 rounded-full bg-pink-500" />}
+                </div>
+              </Link>
+            ))
+          }
+          {
+            icons.map(icon=>(
+              <a href={icon.url} target="_blank" rel="noreferrer" className="duration-300 font-inter text-xl py-4 cursor-pointer tracking-wide font-bold  flex items-center group" onClick={()=>setOpen(false)}>
+                <span className="group-hover:bg-clip-text text-gray-500 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-pink-500">
+                  {icon.title.toUpperCase()}
+                </span>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+      <div className={`animate-fadeIn ${containerClasses}`}>
+        {children}
+      </div>
+    </div>
+  )
+}
+
+export default Layout
