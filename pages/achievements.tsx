@@ -1,17 +1,25 @@
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import Layout from '../components/Layout'
-import { Parallax } from 'react-parallax';
+import htg from '../components/images/htg.png'
+import morethanfood from '../components/images/morethanfood.png'
+import robo2 from '../components/images/robo2.jpg'
 
 const AchievementItems = [
   {
-    title: 'Hack the Globe 2022'
+    image: htg,
+    title: '2022 HTG Finalist',
+    text: "My team (EmergentIQ) were finalists at BCG's 2022 Hack the Globe hackathon. Looking at the theme of economic empowerment, our idea was a SaaS platform that would make market research in SEA more readily available. I made the React TypeScript demo for our project in the 48 hour window we had."
   },
   {
-    title: 'Title 2'
+    image: morethanfood,
+    title: 'MoreThanFood',
+    text: "I created MoreThanFood, an anonymous message board using MERN for NYUAD students to interact with experts and students to speak openly about issues relating to eating disorders for over 2000 students. Coordinating with mental health professionals on campus, we sought to decrease the stigma around eating disorders."
   },
   {
-    title: 'Title 3'
+    image: robo2,
+    title: 'VEX Robotics',
+    text: "As co-captain and lead programmer of the VEX robotics team, our team 901J won 7 total awards at multiple international competitions. We also participated the world championships in 2019 and 2020."
   },
 ]
 
@@ -36,7 +44,7 @@ const AchievementPage = () => {
   return(
     <Layout title="Achievements | Nicholas Raffone">
       <div className="min-h-screen lg:grid grid-cols-4" ref={ref}>
-        <div className="h-screen min-w-[25vw] fixed py-24 px-5 border-r hidden lg:block">
+        <div className="h-screen min-w-[25vw] fixed py-16 px-5 border-r hidden lg:block">
           {
             AchievementItems.map((item, index)=>(
               <p
@@ -52,10 +60,8 @@ const AchievementPage = () => {
           AchievementItems.map(item=>(
           <div className="min-h-screen w-full col-start-2 col-span-3 py-12 lg:py-16 px-0 lg:px-28">
             <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500 text-4xl lg:text-5xl leading-normal font-bold my-3 lg:my-5 w-fit px-3 lg:px-0">{item.title}</h1>
-            <Parallax blur={0} bgImage="https://astrowind.vercel.app/_image/assets/images/hero_768x432.avif" bgImageAlt="the cat" strength={500}>
-              <div style={{ height: '30vh' }} />
-            </Parallax>
-            <p className="text-md lg:text-lg my-5 px-3 lg:px-0">Here's some filler shit yada yada Here's some filler shit yada yada Here's some filler shit yada yada Here's some filler shit yada yada</p>
+            <img src={item.image} className="h-80 object-cover w-full object-left"/>
+            <p className="text-md lg:text-lg my-5 px-3 lg:px-0">{item.text}</p>
           </div>
           ))
         }

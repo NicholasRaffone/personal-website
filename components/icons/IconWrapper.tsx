@@ -9,7 +9,7 @@ const IconWrapper = ({navbar, path, viewbox}:IconWrapperInt) => {
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox={viewbox}
-        className={`duration-300 ${!navbar?"fill-gray-500 group-hover:fill-black":"hover:opacity-100 opacity-50 fill-[url(#BluePinkGradient)]"} cursor-pointer`}
+        className={`duration-300 ${!navbar?"fill-gray-500 group-hover:fill-black":"hover:opacity-100 opacity-50 md:fill-[url(#BluePinkGradient)]"} cursor-pointer`}
     >
         <BluePinkGradient />
         {path}

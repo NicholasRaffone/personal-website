@@ -1,6 +1,9 @@
 import {useEffect, useRef} from 'react';
 import Layout from '../components/Layout'
 import ExperienceItem from '../components/ExperienceItem'
+import PSLogo from '../components/images/pslogo.jpeg'
+import HokanLogo from '../components/images/hokanlogo.png'
+import CallbackLogo from '../components/images/callbacklogo.jpeg'
 
 const down = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" className='w-4 h-auto animate-bounce'><path d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z"/></svg>  
 const isInViewport = (ref, offset = 0) =>{
@@ -32,16 +35,31 @@ const ExperiencePage = () => {
     },[])
     const experiences = [
         {
-            color: 'rgb(0,67,156)',
-            image: 'https://yt3.ggpht.com/ytc/AMLnZu91BueDfRw_PPeht766E0RdKohGtiwzo89ozw_Jthk=s900-c-k-c0x00ffffff-no-rj'
+            color: 'rgb(24,24,24)',
+            image: CallbackLogo,
+            title: 'Full-Stack Developer',
+            company: 'Callback',
+            time: 'March 2022 - Present',
+            desc: 'Created smart contracts for NFT minting, ETL pipelines for BI, and lead development on the Callback website',
+            software: ['Solidity', 'Firebase', 'React']
         },
         {
-            color: 'rgb(24,24,24)',
-            image: 'https://media-exp1.licdn.com/dms/image/C560BAQGX3wLhLMrrmg/company-logo_200_200/0/1649345630824?e=2147483647&v=beta&t=5WEYB9nrhqEVVMc2ipQChV-L2Qh6Iz-ij3bT7Fnnd6U'
+            color: 'rgb(0,67,156)',
+            image: PSLogo,
+            title: 'Software Engineer Intern',
+            company: 'PlayStation',
+            time: 'May 2022 - August 2022',
+            desc: 'Lead a team of 6 interns, architecting and developing upgraded features for the PS5 chat ecosystem',
+            software: ['MERN', 'TypeScript']
         },
         {
             color: 'rgb(69,53,144)',
-            image: 'https://www.corp.hkn.jp/static/hokan_white_vertical-24f691bb86ced7ca4beb87aafa7a852b.png'
+            image: HokanLogo,
+            title: 'Data Engineer Intern',
+            company: 'Hokan Inc.',
+            time: 'October 2020 - March 2021',
+            desc: 'Established a staging environemnt for existing ETL pipelines and created serverless AWS apps for BI',
+            software: ['AWS SAM', 'AWS Glue', 'Terraform']
         }
     ]
     return(
@@ -57,11 +75,15 @@ const ExperiencePage = () => {
                     </div>
                 </div>
                 {
-                    experiences.map((experience, index)=>
-                    <>
-                        <ExperienceItem index={index} color={experience.color} image={experience.image}/>
-                        {index!==experiences.length-1&&<div className="mb-[40vh]"/>}
-                    </>)
+                    experiences.map((experience, index)=>{
+                        const propsObj = {index, ...experience};
+                        return (
+                            <>
+                                <ExperienceItem {...propsObj}/>
+                                {index!==experiences.length-1&&<div className="mb-[40vh]"/>}
+                            </>
+                        )
+                    })
                 }
             </div>
         </Layout>
