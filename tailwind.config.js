@@ -3,8 +3,8 @@ module.exports = {
   mode: 'jit',
   darkMode: false, // 'media' or 'class',
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.tsx',
+    './components/**/*.tsx',
   ],
   theme: {
     extend: {

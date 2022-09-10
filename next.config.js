@@ -7,6 +7,7 @@ module.exports = {
       formats: ['image/avif', 'image/webp'],
       disableStaticImages: true
     },
+    trailingSlash: true,
     future: {
       webpack5: true,
   },
