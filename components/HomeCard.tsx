@@ -16,7 +16,7 @@ const HomeCard = ({
     classes
 }:HomeCardInt) =>{
     return(
-        <div className={`group h-48 w-48 md:h-40 md:w-40 lg:h-64 lg:w-64 relative rounded-2xl overflow-hidden justify-self-center duration-700 ${loaded?"translate-y-0 opacity-1":"translate-y-20 opacity-0"} cursor-pointer ${classes}`}>
+        <div key={`card_${title}`} className={`group h-48 w-48 md:h-40 md:w-40 lg:h-64 lg:w-64 relative rounded-2xl overflow-hidden justify-self-center duration-700 ${loaded?"translate-y-0 opacity-1":"translate-y-20 opacity-0"} cursor-pointer ${classes}`}>
             <img src={image} alt="" className="h-full object-cover w-full"/>
             <p className="bg-black bg-opacity-20 top-0 absolute z-1 text-lg lg:text-2xl font-bold w-full flex justify-center items-center h-full text-white group-hover:opacity-0 duration-500">{title}</p>
             <Link href={to}>
