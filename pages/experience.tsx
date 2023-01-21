@@ -58,7 +58,7 @@ const ExperiencePage = () => {
             title: 'Data Engineer Intern',
             company: 'Hokan Inc.',
             time: 'October 2020 - March 2021',
-            desc: 'Established a staging environemnt for existing ETL pipelines and created serverless AWS apps for BI',
+            desc: 'Established a staging environment for existing ETL pipelines and created serverless AWS apps for BI',
             software: ['AWS SAM', 'AWS Glue', 'Terraform']
         }
     ]
