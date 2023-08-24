@@ -100,7 +100,7 @@ const Layout = ({ children, title = 'This is the default title', containerClasse
         }
         <div className='hidden lg:block cursor-pointer relative group mx-5'>
           <a className={`opacity-50 hover:opacity-100 font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500  duration-300 text-xs`}
-            href="https://drive.google.com/file/d/1RmaByl4CwKpU7eA6Y9XxzalNeDVbWZCB/view" target="_blank" rel="noreferrer"
+            href="https://drive.google.com/file/d/1Vr9DGfoIeRb4Z2Kk5y0AoBzXogL9hcC5/view?usp=sharing" target="_blank" rel="noreferrer"
           >
             RESUME
           </a>
@@ -134,7 +134,7 @@ const Layout = ({ children, title = 'This is the default title', containerClasse
           }
           <div className="flex items-center" onClick={()=>setOpen(false)}>
             <p className={`duration-0 font-inter text-xl py-4 cursor-pointer tracking-wide font-bold mr-2 text-gray-500 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-blue-500 hover:to-pink-500`}>
-              <a href="https://drive.google.com/file/d/1RmaByl4CwKpU7eA6Y9XxzalNeDVbWZCB/view" target="_blank" rel="noreferrer">
+              <a href="https://drive.google.com/file/d/1Vr9DGfoIeRb4Z2Kk5y0AoBzXogL9hcC5/view?usp=sharing" target="_blank" rel="noreferrer">
               RESUME
               </a>
             </p>

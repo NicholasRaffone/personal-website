@@ -4,6 +4,7 @@ import ExperienceItem from '../components/ExperienceItem'
 import PSLogo from '../components/images/pslogo.jpeg'
 import HokanLogo from '../components/images/hokanlogo.png'
 import CallbackLogo from '../components/images/callbacklogo.jpeg'
+import PalantirLogo from '../components/images/palantir.webp'
 
 const down = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" className='w-4 h-auto animate-bounce'><path d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z"/></svg>  
 const isInViewport = (ref, offset = 0) =>{
@@ -35,11 +36,20 @@ const ExperiencePage = () => {
     },[])
     const experiences = [
         {
+            color: 'rgb(0,0,0)',
+            image: PalantirLogo,
+            title: 'Forward Deployed Engineer Intern',
+            company: 'Palantir',
+            time: 'May 2023 - August 2023',
+            desc: 'Developed software in Foundry that facilitated the scaling of Palantir\'s healthcare efforts in the UK',
+            software: ['Foundry', 'SQL', 'TypeScript']
+        },
+        {
             color: 'rgb(24,24,24)',
             image: CallbackLogo,
             title: 'Full-Stack Developer',
             company: 'Callback',
-            time: 'March 2022 - Present',
+            time: 'March 2022 - April 2023',
             desc: 'Created smart contracts for NFT minting, ETL pipelines for BI, and lead development on the Callback website',
             software: ['Solidity', 'Firebase', 'React']
         },

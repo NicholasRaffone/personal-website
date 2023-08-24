@@ -37,7 +37,7 @@ const AboutPage = () => {
         <div className="px-3 md:p-0 md:max-w-[50vw] md:h-48 lg:h-96 flex-1">
           <p className="text-4xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500 w-fit">About Me</p>
           <p className="text-xl">
-            Hi! My name is Nicholas Raffone and I'm a third-year computer science student at NYU Abu Dhabi.
+            Hi! My name is Nicholas Raffone and I'm a computer science student at NYU Abu Dhabi.
             I've been coding for around seven years now, starting with making animations in Scratch all the way to building production-ready web apps and data pipelines.
             <br/><br/>
             Outside of work, I'm a powerlifter aiming to compete on the national scale, and I hope to take the UAE record for squat, bench, and deadlift.

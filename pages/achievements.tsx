@@ -8,6 +8,11 @@ import robo2 from '../components/images/robo2.jpg'
 const AchievementItems = [
   {
     image: htg,
+    title: 'Securing ADS-B',
+    text: "Researching the security of ADS-B communication by implementing and physically testing digital signatures and the TESLA protocol using GNU radio and dump1090 under the guidance of professor Christina Popper at NYU Abu Dhabi. PDF of the research to be out soon!"
+  },
+  {
+    image: htg,
     title: '2022 HTG Finalist',
     text: "My team (EmergentIQ) were finalists at BCG's 2022 Hack the Globe hackathon. Looking at the theme of economic empowerment, our idea was a SaaS platform that would make market research in SEA more readily available. I made the React TypeScript demo for our project in the 48 hour window we had."
   },
