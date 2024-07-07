@@ -2,15 +2,15 @@ import { useEffect, useState } from 'react'
 
 import Layout from '../components/Layout'
 import aboutjpg from '../components/images/about.jpg'
-import walk from '../components/images/walk.jpg'
 import group from '../components/images/group.jpg'
+import pl from '../components/images/pl.jpg'
 
 const AboutPage = () => {
   const [open, setOpen] = useState(0);
     
   const images = [
     aboutjpg,
-    walk,
+    pl,
     group
   ];
 
@@ -37,10 +37,10 @@ const AboutPage = () => {
         <div className="px-3 md:p-0 md:max-w-[50vw] md:h-48 lg:h-96 flex-1">
           <p className="text-4xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500 w-fit">About Me</p>
           <p className="text-xl">
-            Hi! My name is Nicholas Raffone and I'm a computer science student at NYU Abu Dhabi.
-            I've been coding for around seven years now, starting with making animations in Scratch all the way to building production-ready web apps and data pipelines.
+            Hi! My name is Nicholas Raffone and I'm a software engineering student at Carnegie Mellon with a Bachelor's in computer science from NYU Abu Dhabi.
+            I've been interested in coding since I was around 12, starting with making animations in Scratch all the way to building production-ready web apps and data pipelines.
             <br/><br/>
-            Outside of work, I'm a powerlifter aiming to compete on the national scale, and I hope to take the UAE record for squat, bench, and deadlift.
+            Outside of work, I'm a competitive powerlifter and I've made podium finishes at competitions in the UAE for squat, bench, and deadlift.
             I also love urban trekking, just wandering around and between big cities and recording my journeys. 
             <br/><br/>
             In the future, I hope to open my own cafe, focused around holding tech-related community events and engaging with patrons.

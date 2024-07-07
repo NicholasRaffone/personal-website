@@ -45,16 +45,16 @@ const icons = [
     url:'mailto:nicholasraffone0@gmail.com',
     title: 'Mail'
   },
-  {
-    icon:Spotify,
-    url:'https://open.spotify.com/user/nicholas.raffone?si=a94fc1b051014e44',
-    title: 'Spotify'
-  },
-  {
-    icon:Github,
-    url:'https://github.com/nicholasraffone',
-    title: 'Github'
-  },
+  // {
+  //   icon:Spotify,
+  //   url:'https://open.spotify.com/user/nicholas.raffone?si=a94fc1b051014e44',
+  //   title: 'Spotify'
+  // },
+  // {
+  //   icon:Github,
+  //   url:'https://github.com/nicholasraffone',
+  //   title: 'Github'
+  // },
 ]
 
 const Layout = ({ children, title = 'This is the default title', containerClasses }: Props) => {

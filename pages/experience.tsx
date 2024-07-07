@@ -36,6 +36,15 @@ const ExperiencePage = () => {
     },[])
     const experiences = [
         {
+            color: 'rgb(0,67,156)',
+            image: PSLogo,
+            title: 'Software Engineer Intern',
+            company: 'PlayStation',
+            time: 'June 2024 - August 2024',
+            desc: 'Implemented new auth features into internal libraries and frameworks used by client-facing PlayStation services',
+            software: ['Java', 'Spring']
+        },
+        {
             color: 'rgb(0,0,0)',
             image: PalantirLogo,
             title: 'Forward Deployed Engineer Intern',
